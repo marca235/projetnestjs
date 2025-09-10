@@ -2,7 +2,7 @@ import { IsNotEmpty,Length,IsEmail, IsString} from "class-validator"
 
 export class signinDto{
     @IsNotEmpty()
-    @Length(5,30)
+    @Length(20,30)
     @IsString()
     fullname:string
 
@@ -13,7 +13,7 @@ export class signinDto{
     email:string
 
     @IsNotEmpty()
-    @Length(5,30)
+    @Length(20,30)
     @IsString()
     username:string
 

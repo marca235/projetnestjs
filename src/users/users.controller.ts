@@ -1,5 +1,5 @@
 import { Controller,Get, Render, Post, Body } from '@nestjs/common';
-import UsersService from './users.service';
+import {UsersService} from './users.service';
 import { signinDto } from './dtos/signin.dto';
 
 @Controller('users')
@@ -27,7 +27,8 @@ export class UsersController {
 
     @Post("/signin")
     postSignin(@Body() body: signinDto){
-        return body;
+
+        return this.userService.addUser(body);
     }
 
     @Post("/signUp")
