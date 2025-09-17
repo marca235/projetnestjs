@@ -2,7 +2,7 @@ import { IsNotEmpty, Length } from "class-validator";
 
 export class signUpDto{
     @IsNotEmpty()
-    @Length(5,30)
+    @Length(4,30)
     username:string
 
     @IsNotEmpty()
