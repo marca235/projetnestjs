@@ -54,3 +54,36 @@ export class UsersController {
        
     }
 }
+
+
+
+
+// import { Controller, Post, Body, UnauthorizedException } from '@nestjs/common';
+// import { UsersService } from './users.service';
+
+// @Controller('users')
+// export class UsersController {
+//   constructor(private readonly usersService: UsersService) {}
+
+//   @Post('login')
+//   async login(@Body() body: { username: string; password: string }) {
+//     const { username, password } = body;
+//     const isValid = await this.usersService.validateUser(username, password);
+//     if (!isValid) {
+//       throw new UnauthorizedException('Nom d’utilisateur ou mot de passe incorrect');
+//     }
+//     return { message: 'Connexion réussie' };
+//   }
+
+//   @Post('register')
+//   async register(@Body() body: { username: string; password: string }) {
+//     const user = await this.usersService.createUser(body.username, body.password);
+//     return { message: 'Utilisateur créé', userId: user.id };
+//   }
+
+//   @Post('logout')
+//   logout() {
+//     return { message: 'Déconnecté avec succès' };
+//   }
+// }
+

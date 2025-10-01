@@ -15,6 +15,9 @@ export class UsersService {
     @InjectRepository(User) private usersRepository: Repository<User>,) {}
 
 
+       
+
+
    async addUser (body: signinDto){
         try{
             const newUser = this.usersRepository.create({...body});
@@ -49,3 +52,36 @@ export class UsersService {
 
     
 }
+
+
+
+
+// import { Injectable } from '@nestjs/common';
+// import { InjectRepository } from '@nestjs/typeorm';
+// import { Repository } from 'typeorm';
+// import { User } from './user.entity';
+// import * as bcrypt from 'bcrypt';
+
+// @Injectable()
+// export class UsersService {
+//   constructor(
+//     @InjectRepository(User)
+//     private usersRepository: Repository<User>,
+//   ) {}
+
+//   // Vérifier si l'utilisateur existe et que le mot de passe correspond
+//   async validateUser(username: string, password: string): Promise<boolean> {
+//     const user = await this.usersRepository.findOne({ where: { username } });
+//     if (!user) return false;
+
+//     return await bcrypt.compare(password, user.password);
+//   }
+
+//   // Créer un nouvel utilisateur (inscription)
+//   async createUser(username: string, password: string): Promise<User> {
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     const user = this.usersRepository.create({ username, password: hashedPassword });
+//     return this.usersRepository.save(user);
+//   }
+// }
+
