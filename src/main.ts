@@ -9,6 +9,7 @@ import { join } from 'path';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import session from 'express-session';
+import { localData } from './middelwares/auth';
 
 
 const MySQLStore = require('express-mysql-session')(session);
@@ -52,7 +53,7 @@ app.use(
   }),
 );
 
-
+  app.use(localData);
   await app.listen(3000);
 }
 bootstrap();

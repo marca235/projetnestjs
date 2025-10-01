@@ -1,0 +1,33 @@
+<% if(!locals.connected){%>
+
+<h1>Cette  page n'est pas accessible pour le moment, veuillez vous connecter <a href="/users/signUp"></a></h1>
+
+<% }else{ %>
+
+
+<%- include('partial/header.ejs', { title: "home" }) %>
+
+<h3 class="text-center">Bonjour</h3>
+
+
+
+    
+    <div class="container mt-3">
+        <div class="card" style="width: 18rem; margin:auto;">
+            <img src="/image/col.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and
+                    make up the bulk of the card's content.</p>
+                <a href="#" class="">Voir plus...</a>
+            </div>
+        </div>
+    </div>
+
+
+    <%}%>
+    
+<!-- <$- include('partial/footer.ejs') %> -->
+
+    
+
