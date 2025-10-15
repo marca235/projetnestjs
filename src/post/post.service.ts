@@ -8,6 +8,10 @@ import { User } from 'src/users/user.entity';
 
 @Injectable()
 export class PostService {
+  getAllPosts() {
+    const posts = this.postRepository.find({ order: { dateUpdated: 'DESC'}})
+    return posts;
+  }
 
      constructor(
         @InjectRepository(Post) private  postRepository: Repository<Post>) {}
@@ -16,8 +20,8 @@ export class PostService {
         newPost.user=user
         await this.postRepository.save(newPost);
         return "Publication reussie";
-        
-       
-    }
+
+
     
+}
 }

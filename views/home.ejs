@@ -14,17 +14,20 @@
     
     <div class="container mt-3">
         <div class="card" style="width: 18rem; margin:auto;">
+
+            <%posts.forEach(post => { %>
             <img src="/image/col.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and
-                    make up the bulk of the card's content.</p>
-                <a href="#" class="">Voir plus...</a>
+                <h5 class="card-title"><%= post.title%></h5>
+                <p class="card-text"><%= post.content.toString().substr(0,30) %>
+                <% if(post.content.toString().length > 30){ %>
+                <a href="#" class=""> Voir plus...</a></p>
+                <% } %>
+                
             </div>
+            <% });%>
         </div>
     </div>
-
-
     <%}%>
     
 <!-- <$- include('partial/footer.ejs') %> -->
