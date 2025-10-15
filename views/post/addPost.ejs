@@ -1,8 +1,7 @@
 <%- include('../partial/header.ejs',{title:"signin"}) %>
 
-    
      <div class="container mt-3">
-        <form action="/users/post/addPost" method="post" class="bg-light p-4">
+        <form action="/post/addPost" method="post" class="bg-light p-4">
             <div class="mb-3">
                 <label for="formGroupeExampleInput" class="form-label">Titre</label>
                 <input type="text" class="form-control" name="title" id="formGroupeExampleInput" placeholder="Entrer le titre de la publication">
@@ -13,7 +12,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Texte</label>
-                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="6">Contenue</textarea>
+                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="6"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Publier</button>
         </form>
